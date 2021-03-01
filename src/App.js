@@ -1,8 +1,11 @@
 import './css/App.css';
+import DisplayInfo from './components/displayInfo';
 
 function App() {
   return (
-    <div className="App"></div>
+    <>
+      <div className="App"><DisplayInfo /></div>
+    </>
   );
 }
 
