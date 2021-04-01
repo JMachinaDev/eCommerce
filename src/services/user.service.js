@@ -1,35 +1,25 @@
 import http from '../http-common';
+import authHeader from './auth-header';
 
-class UserDataService {
-  getAll() {
-    return http.get('/users')
-  }
-  get(id) {
-    return http.get(`/users/${id}`);
-  }
+class UserService {
+  getPublicContent() {
+    return http.get(API_URL + 'all');
+  };
 
-  create(data) {
-    return http.post('/users', data);
-  }
+  getUserBoard() {
+    return http.get(API_URL + 'user', { headers: authHeader() });
+  };
 
-  update(id, data) {
-    return http.put(`/users/${id}`, data);
-  }
+  getModeratorBoard() {
+    return http.post(API_URL + 'mod', { headers: authHeader() });
+  };
 
-  //   delete(id) {
-  //     return http.delete(`/tutorials/${id}`);
-  //   }
-
-  //   deleteAll() {
-  //     return http.delete(`/tutorials`);
-  //   }
-
-  //   findByTitle(title) {
-  //     return http.get(`/tutorials?title=${title}`);
-  //   }
+  getAdminBoard() {
+    return http.put(API_URL + 'admin', { headers: authHeader() });
+  };
 }
 
-export default new UserDataService();
+export default new UserService();
 
 // we call axios get, post, put, delete method corresponding to HTTP request
 // GET, POST, PUT, DELETE to make CRUD Operations
