@@ -9,9 +9,11 @@ const Home = () => {
       .then((response) => {
         setContent(response.data);
       }, (error) => {
-        const _content = (error.response && error.response.data) ||
+        const _content = (
+          error.response &&
+          error.response.data) ||
           error.message ||
-          error.toString()
+          error.toString();
 
         setContent(_content);
       });
