@@ -1,14 +1,13 @@
+// AUTHENTICATION SERVICE
 import axios from 'axios';
-
-const API_URL = "http://localhost:8080/api/auth/";
+import http from '../http-common';
 
 class AuthService {
   login(username, password) {
-    return axios
-      .post(API_URL + "signin", {
-        username,
-        password
-      })
+    return http.post("api/auth/signin", {
+      username,
+      password
+    })
       .then(response => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
@@ -23,7 +22,7 @@ class AuthService {
   };
 
   register(username, email, password) {
-    return axios.post(API_URL + "signup", {
+    return http.post("api/auth/signup", {
       username,
       email,
       password
@@ -35,4 +34,4 @@ class AuthService {
   };
 };
 
-export default new AuthService();
+export default AuthService;

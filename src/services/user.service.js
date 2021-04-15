@@ -1,21 +1,22 @@
+// DATA SERVICE
 import http from '../http-common';
 import authHeader from './auth-header';
 
 class UserService {
   getPublicContent() {
-    return http.get(API_URL + 'all');
+    return http.get('all');
   };
 
   getUserBoard() {
-    return http.get(API_URL + 'user', { headers: authHeader() });
+    return http.get('api/test/user', { headers: authHeader() });
   };
 
   getModeratorBoard() {
-    return http.post(API_URL + 'mod', { headers: authHeader() });
+    return http.post('api/test/mod', { headers: authHeader() });
   };
 
   getAdminBoard() {
-    return http.put(API_URL + 'admin', { headers: authHeader() });
+    return http.put('api/test/admin', { headers: authHeader() });
   };
 }
 
