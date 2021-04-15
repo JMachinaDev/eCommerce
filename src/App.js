@@ -18,9 +18,10 @@ const App = () => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
 
-function App() {
+  const authentication = new AuthService();
 
   useEffect(() => {
+    const user = authentication.getCurrentUser();
 
     if (user) {
       setCurrentUser(user);
@@ -30,6 +31,7 @@ function App() {
   }, []);
 
   const logOut = () => {
+    authentication.logout();
   };
 
   return (
