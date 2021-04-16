@@ -1,5 +1,4 @@
 // AUTHENTICATION SERVICE
-import axios from 'axios';
 import http from '../http-common';
 
 class AuthService {
@@ -30,7 +29,8 @@ class AuthService {
   };
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));
+    let userInStorage = localStorage.getItem('user');
+    return JSON.parse(userInStorage);
   };
 };
 
