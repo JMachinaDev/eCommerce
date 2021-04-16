@@ -3,21 +3,21 @@ import UserService from '../services/user.service';
 
 const BoardUser = () => {
   const [content, setContent] = useState('');
+  const userService = new UserService().getUserBoard();
 
   useEffect(() => {
-    UserService.getUserBoard()
-      .then((response) => {
-        setContent(response.data);
-      }, (error) => {
-        const _content = (
-          error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-          error.message ||
-          error.toString();
+    userService.then((response) => {
+      setContent(response.data);
+    }, (error) => {
+      const _content = (
+        error.response &&
+        error.response.data &&
+        error.response.data.message) ||
+        error.message ||
+        error.toString();
 
-        setContent(_content);
-      });
+      setContent(_content);
+    });
   }, []);
 
   return (
