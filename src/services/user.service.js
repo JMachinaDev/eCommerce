@@ -4,7 +4,7 @@ import authHeader from './auth-header';
 
 class UserService {
   getPublicContent() {
-    return http.get('all');
+    return http.get('api/test/all');
   };
 
   getUserBoard() {
@@ -20,7 +20,7 @@ class UserService {
   };
 }
 
-export default new UserService();
+export default UserService;
 
 // we call axios get, post, put, delete method corresponding to HTTP request
 // GET, POST, PUT, DELETE to make CRUD Operations
