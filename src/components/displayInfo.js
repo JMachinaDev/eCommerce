@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
+import HeartbeatService from '../services/heartbeat.service';
 
 const DisplayInfo = (props) => {
-  const blah = process.env.REACT_APP_BACKEND_API;
-
+  const service = new HeartbeatService();
   const [data, setData] = useState();
 
   function fetchData() {
-    fetch(blah + '/info', {
-      method: 'GET',
-    })
-      .then(responseFromApi => {
-        return responseFromApi.json();
-      })
-      .then(json => setData(json))
+    service.ping()
+      .then(jsonResponse => setData(jsonResponse))
       .catch(error => {
         console.error(error);
         setData({ error: error });
