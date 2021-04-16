@@ -6,6 +6,13 @@ import { isEmail } from 'validator';
 
 import AuthService from '../services/auth.service';
 
+const iFrame = {
+  width: '100%',
+  height: '0',
+  paddingBottom: '56%',
+  position: 'relative',
+}
+
 const required = (value) => {
   if (!value) {
     return (
@@ -103,11 +110,18 @@ const Register = (props) => {
   return (
     <div className="col-md-12">
       <div className="card card-container">
-        <img
-          src=""
-          alt=""
-          className="profile-img-card"
-        />
+
+        <div style={iFrame}>
+          <iframe src="https://giphy.com/embed/3o6MbpkN66FhmfRIoU" width="100%" height="100%" style={{ position: 'absolute' }} frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <p style={{ margin: '0 auto 2rem auto' }}>
+          <a
+            href="https://giphy.com/gifs/season-6-the-simpsons-6x25-3o6MbpkN66FhmfRIoU"
+            style={{ fontSize: '8px' }}
+          >
+            via GIPHY
+          </a>
+        </p>
 
         <Form onSubmit={handleRegister} ref={form}>
           {!successful && (

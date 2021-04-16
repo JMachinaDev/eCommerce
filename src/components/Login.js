@@ -5,6 +5,13 @@ import CheckButton from 'react-validation/build/button';
 
 import AuthService from '../services/auth.service';
 
+const iFrame = {
+  width: '100%',
+  height: '0',
+  paddingBottom: '56%',
+  position: 'relative',
+}
+
 const required = value => {
   if (!value) {
     return (
@@ -66,8 +73,20 @@ const Login = (props) => {
 
   return (
     <div className="col-md-12">
-      <div className="car card-container">
-        <img className="profile-img-card" />
+      <div className="card card-container">
+
+        <div style={iFrame}>
+          <iframe src="https://giphy.com/embed/D9ujqMZoTtjAQ" width="100%" height="100%" style={{ position: 'absolute' }} frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <p style={{ margin: '0 auto 2rem auto' }}>
+          <a
+            href="https://giphy.com/gifs/the-simpsons-reaction-bart-simpson-D9ujqMZoTtjAQ"
+            style={{ fontSize: '8px' }}
+          >
+            via GIPHY
+          </a>
+        </p>
+
 
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
