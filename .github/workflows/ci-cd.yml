@@ -35,7 +35,7 @@ jobs:
       matrix:
         python-version: [3.8]
         node-version: ["12.x"]
-        appname: ["aws-eCommerce"]
+        appname: ["jmachina-ecommerce"]
         deploy-group: ["staging"]
         s3-bucket: ["aws-jmachina-ecommerce"]
         s3-filename: ["staging-aws-jmachina-ecommerce-${{ github.sha }}"]
