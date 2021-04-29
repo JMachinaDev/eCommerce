@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'aws-jmachina-ecommerce',
+      name: 'aws-codedeploy',
       script: 'npx',
       args: 'serve -s build -l 8081 -n',
       interpreter: 'none',
