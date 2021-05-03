@@ -1,3 +1,4 @@
 #!/bin/bash
 cd ~/aws-codedeploy
-pm2 startOrReload ecosystem.config.js
+sudo /usr/bin/pm2 status
+sudo /usr/local/bin/pm2 startOrReload ecosystem.config.js
