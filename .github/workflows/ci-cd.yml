@@ -52,8 +52,6 @@ jobs:
       # Install project dependencies and build
       - name: Install dependencies
         run: npm install
-      -name: Check Audit fix
-        run: npm audit fix
       - name: Run build
         run: npm run build
 
