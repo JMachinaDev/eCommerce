@@ -11,4 +11,3 @@ module.exports = {
     },
   ],
 }
-// delete this, push up changes, update .env on ssh
