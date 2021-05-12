@@ -5,6 +5,7 @@
 node_modules/
 /.pnp
 .pnp.js
+ecosystem.config.js
 
 # testing
 /coverage
